@@ -22,7 +22,7 @@ fail() {
 wait_for_url() {
     declare url="$1" max_retries="${2:-100}"
     for _ in $(seq 1 "${max_retries}"); do
-        wget -O /dev/null -q "${url}" \
+        curl -XGET -s "${url}" > /dev/null \
             && return 0
 
         sleep 1
@@ -33,10 +33,10 @@ wait_for_url() {
 
 add_data_sources() {
     for data_source_file in ${SCRIPT_DIR}/configuration/data_sources/*.json; do
-        wget -O /dev/null -q \
-            --header 'Content-Type: application/json;charset=UTF-8' \
-            --post-file "${data_source_file}" \
-            "${GRAFANA_BASE_URL}/api/datasources"
+        curl -XPOST -fsS "${GRAFANA_BASE_URL}/api/datasources" \
+            -H 'Content-Type: application/json;charset=UTF-8' \
+            --data-binary "@${data_source_file}" \
+            > /dev/null
     done
 }
 
