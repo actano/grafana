@@ -563,7 +563,7 @@
         }
       ],
       "repeat": null,
-      "repeatIteration": 1454683639727,
+      "repeatIteration": 1454685347217,
       "repeatRowId": 2,
       "scopedVars": {
         "containerName": {
@@ -578,7 +578,7 @@
   ],
   "time": {
     "from": "now-1h",
-    "to": "now"
+    "to": "now+10m"
   },
   "timepicker": {
     "now": true,
@@ -627,7 +627,7 @@
         "options": [
           {
             "text": "All",
-            "value": "(\\\"couchbase\\\" OR \\\"dockerbeat\\\" OR \\\"elasticsearch\\\" OR \\\"fluentd\\\" OR \\\"grafana\\\" OR \\\"kibana\\\" OR \\\"loadbalancer\\\" OR \\\"romantic_cray\\\" OR \\\"rplan\\\" OR \\\"website\\\")",
+            "value": "(\\\"couchbase\\\" OR \\\"dockerbeat\\\" OR \\\"elasticsearch\\\" OR \\\"fluentd\\\" OR \\\"grafana\\\" OR \\\"hopeful_bardeen\\\" OR \\\"kibana\\\" OR \\\"loadbalancer\\\" OR \\\"romantic_cray\\\" OR \\\"rplan\\\" OR \\\"website\\\")",
             "selected": false
           },
           {
@@ -653,6 +653,11 @@
           {
             "text": "grafana",
             "value": "grafana",
+            "selected": false
+          },
+          {
+            "text": "hopeful_bardeen",
+            "value": "hopeful_bardeen",
             "selected": false
           },
           {
@@ -689,9 +694,36 @@
     ]
   },
   "annotations": {
-    "list": []
+    "list": [
+      {
+        "datasource": "es_logs",
+        "enable": true,
+        "iconColor": "rgb(72, 72, 255)",
+        "iconSize": 13,
+        "lineColor": "rgba(96, 109, 255, 0.59)",
+        "name": "Deployments",
+        "query": "\"Server with process pid\"",
+        "showLine": true,
+        "textField": "extra.msg",
+        "timeField": "@timestamp",
+        "titleField": "@container_id"
+      },
+      {
+        "name": "Planning Object Changes",
+        "datasource": "es_logs",
+        "showLine": true,
+        "iconColor": "rgb(10, 250, 0)",
+        "lineColor": "rgba(109, 255, 96, 0.59)",
+        "iconSize": 13,
+        "enable": true,
+        "query": "extra.operation:po*",
+        "timeField": "@timestamp",
+        "titleField": "extra.operation",
+        "textField": "extra.user.id"
+      }
+    ]
   },
   "schemaVersion": 8,
-  "version": 11,
+  "version": 1,
   "links": []
 }
