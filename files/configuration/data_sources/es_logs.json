@@ -1,0 +1,12 @@
+{
+    "name": "es_logs",
+    "type": "elasticsearch",
+    "url": "http://elasticsearch:9200/",
+    "access": "proxy",
+    "jsonData": {
+        "timeField": "@timestamp",
+        "interval": "Daily",
+        "esVersion": 2
+    },
+    "database": "[logstash-]YYYY.MM.DD"
+}
