@@ -179,8 +179,8 @@
           "rightYAxisLabel": "Memory",
           "scopedVars": {
             "containerName": {
-              "text": "couchbase",
-              "value": "couchbase",
+              "text": "couchbase2",
+              "value": "couchbase2",
               "selected": true
             }
           },
@@ -344,8 +344,8 @@
       "repeat": "containerName",
       "scopedVars": {
         "containerName": {
-          "text": "couchbase",
-          "value": "couchbase",
+          "text": "couchbase2",
+          "value": "couchbase2",
           "selected": true
         }
       },
@@ -563,8 +563,6 @@
         }
       ],
       "repeat": null,
-      "repeatIteration": 1454685347217,
-      "repeatRowId": 2,
       "scopedVars": {
         "containerName": {
           "text": "rplan",
@@ -573,7 +571,9 @@
         }
       },
       "showTitle": true,
-      "title": "$containerName"
+      "title": "$containerName",
+      "repeatRowId": 2,
+      "repeatIteration": 1455613270434
     }
   ],
   "time": {
@@ -612,9 +612,9 @@
         "allFormat": "lucene",
         "current": {
           "tags": [],
-          "text": "couchbase + rplan",
+          "text": "couchbase2 + rplan",
           "value": [
-            "couchbase",
+            "couchbase2",
             "rplan"
           ]
         },
@@ -627,12 +627,12 @@
         "options": [
           {
             "text": "All",
-            "value": "(\\\"couchbase\\\" OR \\\"dockerbeat\\\" OR \\\"elasticsearch\\\" OR \\\"fluentd\\\" OR \\\"grafana\\\" OR \\\"hopeful_bardeen\\\" OR \\\"kibana\\\" OR \\\"loadbalancer\\\" OR \\\"romantic_cray\\\" OR \\\"rplan\\\" OR \\\"website\\\")",
+            "value": "(\\\"couchbase2\\\" OR \\\"dockerbeat\\\" OR \\\"elasticsearch\\\" OR \\\"fervent_yonath\\\" OR \\\"fluentd\\\" OR \\\"grafana\\\" OR \\\"kibana\\\" OR \\\"loadbalancer\\\" OR \\\"rplan\\\" OR \\\"website\\\")",
             "selected": false
           },
           {
-            "text": "couchbase",
-            "value": "couchbase",
+            "text": "couchbase2",
+            "value": "couchbase2",
             "selected": true
           },
           {
@@ -646,6 +646,11 @@
             "selected": false
           },
           {
+            "text": "fervent_yonath",
+            "value": "fervent_yonath",
+            "selected": false
+          },
+          {
             "text": "fluentd",
             "value": "fluentd",
             "selected": false
@@ -656,11 +661,6 @@
             "selected": false
           },
           {
-            "text": "hopeful_bardeen",
-            "value": "hopeful_bardeen",
-            "selected": false
-          },
-          {
             "text": "kibana",
             "value": "kibana",
             "selected": false
@@ -668,11 +668,6 @@
           {
             "text": "loadbalancer",
             "value": "loadbalancer",
-            "selected": false
-          },
-          {
-            "text": "romantic_cray",
-            "value": "romantic_cray",
             "selected": false
           },
           {
@@ -709,17 +704,17 @@
         "titleField": "@container_id"
       },
       {
-        "name": "Planning Object Changes",
         "datasource": "es_logs",
-        "showLine": true,
-        "iconColor": "rgb(10, 250, 0)",
-        "lineColor": "rgba(109, 255, 96, 0.59)",
-        "iconSize": 13,
         "enable": true,
+        "iconColor": "rgb(10, 250, 0)",
+        "iconSize": 13,
+        "lineColor": "rgba(109, 255, 96, 0.59)",
+        "name": "Planning Object Changes",
         "query": "extra.operation:po*",
+        "showLine": true,
+        "textField": "extra.user.id",
         "timeField": "@timestamp",
-        "titleField": "extra.operation",
-        "textField": "extra.user.id"
+        "titleField": "extra.operation"
       }
     ]
   },
