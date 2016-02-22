@@ -179,8 +179,8 @@
           "rightYAxisLabel": "Memory",
           "scopedVars": {
             "containerName": {
-              "text": "couchbase2",
-              "value": "couchbase2",
+              "text": "couchbase",
+              "value": "couchbase",
               "selected": true
             }
           },
@@ -344,8 +344,8 @@
       "repeat": "containerName",
       "scopedVars": {
         "containerName": {
-          "text": "couchbase2",
-          "value": "couchbase2",
+          "text": "couchbase",
+          "value": "couchbase",
           "selected": true
         }
       },
@@ -612,9 +612,9 @@
         "allFormat": "lucene",
         "current": {
           "tags": [],
-          "text": "couchbase2 + rplan",
+          "text": "couchbase + rplan",
           "value": [
-            "couchbase2",
+            "couchbase",
             "rplan"
           ]
         },
@@ -627,12 +627,12 @@
         "options": [
           {
             "text": "All",
-            "value": "(\\\"couchbase2\\\" OR \\\"dockerbeat\\\" OR \\\"elasticsearch\\\" OR \\\"fervent_yonath\\\" OR \\\"fluentd\\\" OR \\\"grafana\\\" OR \\\"kibana\\\" OR \\\"loadbalancer\\\" OR \\\"rplan\\\" OR \\\"website\\\")",
+            "value": "(\\\"couchbase\\\" OR \\\"dockerbeat\\\" OR \\\"elasticsearch\\\" OR \\\"fervent_yonath\\\" OR \\\"fluentd\\\" OR \\\"grafana\\\" OR \\\"kibana\\\" OR \\\"loadbalancer\\\" OR \\\"rplan\\\" OR \\\"website\\\")",
             "selected": false
           },
           {
-            "text": "couchbase2",
-            "value": "couchbase2",
+            "text": "couchbase",
+            "value": "couchbase",
             "selected": true
           },
           {
