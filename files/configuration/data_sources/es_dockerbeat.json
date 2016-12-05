@@ -6,7 +6,7 @@
     "jsonData": {
         "timeField": "@timestamp",
         "interval": "Daily",
-        "esVersion": 2
+        "esVersion": 5
     },
     "database": "[dockerbeat-]YYYY.MM.DD"
 }
