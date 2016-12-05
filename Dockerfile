@@ -1,4 +1,4 @@
-FROM grafana/grafana:3.1.1
+FROM rplan/grafana-docker:es5_support
 
 RUN apt-get update \
     && apt-get -y --no-install-recommends install curl jq \
