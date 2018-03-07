@@ -1,4 +1,4 @@
-FROM grafana/grafana:3.1.1
+FROM grafana/grafana:5.0.0
 
 RUN apt-get update \
     && apt-get -y --no-install-recommends install curl jq \
