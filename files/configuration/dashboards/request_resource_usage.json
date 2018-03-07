@@ -1,581 +1,719 @@
 {
-  "id": 2,
-  "title": "Request Resource Usage",
-  "originalTitle": "Request Resource Usage",
-  "tags": [],
-  "style": "dark",
-  "timezone": "browser",
+  "annotations": {
+    "list": [
+      {
+        "$$hashKey": "object:1967",
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      },
+      {
+        "$$hashKey": "object:1968",
+        "datasource": "es_logs",
+        "enable": true,
+        "iconColor": "rgb(72, 72, 255)",
+        "iconSize": 13,
+        "lineColor": "rgba(96, 109, 255, 0.59)",
+        "name": "Deployments",
+        "query": "\"Server with process pid\"",
+        "showLine": true,
+        "textField": "extra.msg",
+        "timeField": "@timestamp",
+        "titleField": "@container_id"
+      },
+      {
+        "$$hashKey": "object:1969",
+        "datasource": "es_logs",
+        "enable": true,
+        "iconColor": "rgb(10, 250, 0)",
+        "iconSize": 13,
+        "lineColor": "rgba(109, 255, 96, 0.59)",
+        "name": "Planning Object Changes",
+        "query": "extra.operation:po*",
+        "showLine": true,
+        "textField": "extra.user.id",
+        "timeField": "@timestamp",
+        "titleField": "extra.operation"
+      }
+    ]
+  },
   "editable": true,
-  "hideControls": false,
-  "sharedCrosshair": true,
-  "rows": [
+  "gnetId": null,
+  "graphTooltip": 1,
+  "id": 2,
+  "iteration": 1520439240439,
+  "links": [],
+  "panels": [
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "es_logs",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": 0,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": 0,
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "id": 1,
-          "interval": ">10s",
-          "isNew": true,
-          "leftYAxisLabel": "Count",
-          "legend": {
-            "avg": true,
-            "current": true,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 1,
-          "points": false,
-          "renderer": "flot",
-          "rightYAxisLabel": "",
-          "seriesOverrides": [],
-          "span": 12,
-          "stack": false,
-          "steppedLine": true,
-          "targets": [
-            {
-              "alias": "Requests",
-              "bucketAggs": [
-                {
-                  "field": "@timestamp",
-                  "id": "2",
-                  "settings": {
-                    "interval": "auto",
-                    "min_doc_count": 0
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "dsType": "elasticsearch",
-              "metrics": [
-                {
-                  "field": "select field",
-                  "id": "1",
-                  "type": "count"
-                }
-              ],
-              "query": "\"Trying to load user\"",
-              "refId": "A",
-              "timeField": "@timestamp"
-            },
-            {
-              "alias": "Unique Users",
-              "bucketAggs": [
-                {
-                  "field": "@timestamp",
-                  "id": "2",
-                  "settings": {
-                    "interval": "auto",
-                    "min_doc_count": 0
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "dsType": "elasticsearch",
-              "metrics": [
-                {
-                  "field": "extra.msg",
-                  "id": "1",
-                  "meta": {},
-                  "settings": {},
-                  "type": "cardinality"
-                }
-              ],
-              "query": "\"Trying to load user\"",
-              "refId": "B",
-              "timeField": "@timestamp"
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Requests Webapp",
-          "tooltip": {
-            "shared": true,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "short",
-            "short"
-          ]
-        }
-      ],
-      "title": "Row"
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "panels": [],
+      "title": "Row",
+      "type": "row"
     },
     {
-      "collapse": false,
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "es_logs",
       "editable": true,
-      "height": "250px",
-      "panels": [
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 1,
+      "interval": ">10s",
+      "isNew": true,
+      "legend": {
+        "avg": true,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 1,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "es_dockerbeat",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": 0,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": 0,
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "id": 2,
-          "isNew": true,
-          "leftYAxisLabel": "CPU",
-          "legend": {
-            "alignAsTable": false,
-            "avg": false,
-            "current": true,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "rightYAxisLabel": "Memory",
-          "scopedVars": {
-            "containerName": {
-              "text": "couchbase2",
-              "value": "couchbase2",
-              "selected": true
-            }
-          },
-          "seriesOverrides": [
+          "alias": "Requests",
+          "bucketAggs": [
             {
-              "alias": "/^CPU/",
-              "yaxis": 1
-            },
-            {
-              "alias": "/^Memory/",
-              "yaxis": 2,
-              "zindex": -2
-            },
-            {
-              "alias": "/^Memory limit/",
-              "color": "#E24D42",
-              "fill": 0,
-              "legend": false,
-              "linewidth": 1,
-              "zindex": -3
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0
+              },
+              "type": "date_histogram"
             }
           ],
-          "span": 12,
-          "stack": false,
-          "steppedLine": true,
-          "targets": [
+          "dsType": "elasticsearch",
+          "metrics": [
             {
-              "alias": "CPU {{term beat.name}}",
-              "bucketAggs": [
-                {
-                  "fake": true,
-                  "field": "beat.name",
-                  "id": "3",
-                  "settings": {
-                    "order": "asc",
-                    "orderBy": "_term",
-                    "size": "0"
-                  },
-                  "type": "terms"
-                },
-                {
-                  "field": "@timestamp",
-                  "id": "2",
-                  "settings": {
-                    "interval": "auto",
-                    "min_doc_count": 1
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "dsType": "elasticsearch",
-              "metrics": [
-                {
-                  "field": "cpu.totalUsage",
-                  "id": "1",
-                  "meta": {},
-                  "pipelineAgg": "select metric",
-                  "settings": {},
-                  "type": "max"
-                }
-              ],
-              "query": "type:cpu AND containerName:$containerName",
-              "refId": "A",
-              "timeField": "@timestamp"
-            },
-            {
-              "alias": "Memory {{term beat.name}}",
-              "bucketAggs": [
-                {
-                  "fake": true,
-                  "field": "beat.name",
-                  "id": "3",
-                  "settings": {
-                    "order": "asc",
-                    "orderBy": "_term",
-                    "size": "0"
-                  },
-                  "type": "terms"
-                },
-                {
-                  "field": "@timestamp",
-                  "id": "2",
-                  "settings": {
-                    "interval": "auto",
-                    "min_doc_count": 1
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "dsType": "elasticsearch",
-              "metrics": [
-                {
-                  "field": "memory.usage",
-                  "id": "1",
-                  "inlineScript": null,
-                  "meta": {},
-                  "settings": {},
-                  "type": "max"
-                }
-              ],
-              "query": "type:memory AND containerName:$containerName",
-              "refId": "B",
-              "timeField": "@timestamp"
-            },
-            {
-              "alias": "Memory limit {{term beat.name}}",
-              "bucketAggs": [
-                {
-                  "fake": true,
-                  "field": "beat.name",
-                  "id": "3",
-                  "settings": {
-                    "order": "asc",
-                    "orderBy": "_term",
-                    "size": "0"
-                  },
-                  "type": "terms"
-                },
-                {
-                  "field": "@timestamp",
-                  "id": "2",
-                  "settings": {
-                    "interval": "auto",
-                    "min_doc_count": 1
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "dsType": "elasticsearch",
-              "metrics": [
-                {
-                  "field": "memory.limit",
-                  "id": "1",
-                  "inlineScript": null,
-                  "meta": {},
-                  "settings": {},
-                  "type": "max"
-                }
-              ],
-              "query": "type:memory AND containerName:$containerName",
-              "refId": "C",
-              "timeField": "@timestamp"
+              "field": "select field",
+              "id": "1",
+              "type": "count"
             }
           ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "CPU / Memory",
-          "tooltip": {
-            "shared": true,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "percentunit",
-            "bytes"
-          ]
+          "query": "\"Trying to load user\"",
+          "refId": "A",
+          "timeField": "@timestamp"
+        },
+        {
+          "alias": "Unique Users",
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "metrics": [
+            {
+              "field": "extra.msg",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "cardinality"
+            }
+          ],
+          "query": "\"Trying to load user\"",
+          "refId": "B",
+          "timeField": "@timestamp"
         }
       ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Requests Webapp",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "Count",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "id": 5,
+      "panels": [],
       "repeat": "containerName",
       "scopedVars": {
         "containerName": {
+          "selected": true,
           "text": "couchbase2",
-          "value": "couchbase2",
-          "selected": true
+          "value": "couchbase2"
         }
       },
-      "showTitle": true,
-      "title": "$containerName"
+      "title": "$containerName",
+      "type": "row"
     },
     {
-      "collapse": false,
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "es_dockerbeat",
       "editable": true,
-      "height": "250px",
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "es_dockerbeat",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": 0,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": 0,
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "id": 3,
-          "isNew": true,
-          "leftYAxisLabel": "CPU",
-          "legend": {
-            "alignAsTable": false,
-            "avg": false,
-            "current": true,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "rightYAxisLabel": "Memory",
-          "scopedVars": {
-            "containerName": {
-              "text": "rplan",
-              "value": "rplan",
-              "selected": true
-            }
-          },
-          "seriesOverrides": [
-            {
-              "alias": "/^CPU/",
-              "yaxis": 1
-            },
-            {
-              "alias": "/^Memory/",
-              "yaxis": 2,
-              "zindex": -2
-            },
-            {
-              "alias": "/^Memory limit/",
-              "color": "#E24D42",
-              "fill": 0,
-              "legend": false,
-              "linewidth": 1,
-              "zindex": -3
-            }
-          ],
-          "span": 12,
-          "stack": false,
-          "steppedLine": true,
-          "targets": [
-            {
-              "alias": "CPU {{term beat.name}}",
-              "bucketAggs": [
-                {
-                  "fake": true,
-                  "field": "beat.name",
-                  "id": "3",
-                  "settings": {
-                    "order": "asc",
-                    "orderBy": "_term",
-                    "size": "0"
-                  },
-                  "type": "terms"
-                },
-                {
-                  "field": "@timestamp",
-                  "id": "2",
-                  "settings": {
-                    "interval": "auto",
-                    "min_doc_count": 1
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "dsType": "elasticsearch",
-              "metrics": [
-                {
-                  "field": "cpu.totalUsage",
-                  "id": "1",
-                  "meta": {},
-                  "pipelineAgg": "select metric",
-                  "settings": {},
-                  "type": "max"
-                }
-              ],
-              "query": "type:cpu AND containerName:$containerName",
-              "refId": "A",
-              "timeField": "@timestamp"
-            },
-            {
-              "alias": "Memory {{term beat.name}}",
-              "bucketAggs": [
-                {
-                  "fake": true,
-                  "field": "beat.name",
-                  "id": "3",
-                  "settings": {
-                    "order": "asc",
-                    "orderBy": "_term",
-                    "size": "0"
-                  },
-                  "type": "terms"
-                },
-                {
-                  "field": "@timestamp",
-                  "id": "2",
-                  "settings": {
-                    "interval": "auto",
-                    "min_doc_count": 1
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "dsType": "elasticsearch",
-              "metrics": [
-                {
-                  "field": "memory.usage",
-                  "id": "1",
-                  "inlineScript": null,
-                  "meta": {},
-                  "settings": {},
-                  "type": "max"
-                }
-              ],
-              "query": "type:memory AND containerName:$containerName",
-              "refId": "B",
-              "timeField": "@timestamp"
-            },
-            {
-              "alias": "Memory limit {{term beat.name}}",
-              "bucketAggs": [
-                {
-                  "fake": true,
-                  "field": "beat.name",
-                  "id": "3",
-                  "settings": {
-                    "order": "asc",
-                    "orderBy": "_term",
-                    "size": "0"
-                  },
-                  "type": "terms"
-                },
-                {
-                  "field": "@timestamp",
-                  "id": "2",
-                  "settings": {
-                    "interval": "auto",
-                    "min_doc_count": 1
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "dsType": "elasticsearch",
-              "metrics": [
-                {
-                  "field": "memory.limit",
-                  "id": "1",
-                  "inlineScript": null,
-                  "meta": {},
-                  "settings": {},
-                  "type": "max"
-                }
-              ],
-              "query": "type:memory AND containerName:$containerName",
-              "refId": "C",
-              "timeField": "@timestamp"
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "CPU / Memory",
-          "tooltip": {
-            "shared": true,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "percentunit",
-            "bytes"
-          ]
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": 1458568744612,
-      "repeatRowId": 2,
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 2,
+      "isNew": true,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
       "scopedVars": {
         "containerName": {
-          "text": "rplan",
-          "value": "rplan",
-          "selected": true
+          "selected": true,
+          "text": "couchbase2",
+          "value": "couchbase2"
         }
       },
-      "showTitle": true,
-      "title": "$containerName"
+      "seriesOverrides": [
+        {
+          "alias": "/^CPU/",
+          "yaxis": 1
+        },
+        {
+          "alias": "/^Memory/",
+          "yaxis": 2,
+          "zindex": -2
+        },
+        {
+          "alias": "/^Memory limit/",
+          "color": "#E24D42",
+          "fill": 0,
+          "legend": false,
+          "linewidth": 1,
+          "zindex": -3
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "CPU {{term beat.name}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "beat.name",
+              "id": "3",
+              "settings": {
+                "order": "asc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 1
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "metrics": [
+            {
+              "field": "cpu.totalUsage",
+              "id": "1",
+              "meta": {},
+              "pipelineAgg": "select metric",
+              "settings": {},
+              "type": "max"
+            }
+          ],
+          "query": "type:cpu AND containerName:$containerName",
+          "refId": "A",
+          "timeField": "@timestamp"
+        },
+        {
+          "alias": "Memory {{term beat.name}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "beat.name",
+              "id": "3",
+              "settings": {
+                "order": "asc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 1
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "metrics": [
+            {
+              "field": "memory.usage",
+              "id": "1",
+              "inlineScript": null,
+              "meta": {},
+              "settings": {},
+              "type": "max"
+            }
+          ],
+          "query": "type:memory AND containerName:$containerName",
+          "refId": "B",
+          "timeField": "@timestamp"
+        },
+        {
+          "alias": "Memory limit {{term beat.name}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "beat.name",
+              "id": "3",
+              "settings": {
+                "order": "asc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 1
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "metrics": [
+            {
+              "field": "memory.limit",
+              "id": "1",
+              "inlineScript": null,
+              "meta": {},
+              "settings": {},
+              "type": "max"
+            }
+          ],
+          "query": "type:memory AND containerName:$containerName",
+          "refId": "C",
+          "timeField": "@timestamp"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU / Memory",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percentunit",
+          "label": "CPU",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "bytes",
+          "label": "Memory",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "id": 6,
+      "panels": [],
+      "repeat": null,
+      "repeatIteration": 1520439240439,
+      "repeatPanelId": 5,
+      "scopedVars": {
+        "containerName": {
+          "selected": true,
+          "text": "rplan",
+          "value": "rplan"
+        }
+      },
+      "title": "$containerName",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "es_dockerbeat",
+      "editable": true,
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "id": 7,
+      "isNew": true,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeatIteration": 1520439240439,
+      "repeatPanelId": 2,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "containerName": {
+          "selected": true,
+          "text": "rplan",
+          "value": "rplan"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "/^CPU/",
+          "yaxis": 1
+        },
+        {
+          "alias": "/^Memory/",
+          "yaxis": 2,
+          "zindex": -2
+        },
+        {
+          "alias": "/^Memory limit/",
+          "color": "#E24D42",
+          "fill": 0,
+          "legend": false,
+          "linewidth": 1,
+          "zindex": -3
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "CPU {{term beat.name}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "beat.name",
+              "id": "3",
+              "settings": {
+                "order": "asc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 1
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "metrics": [
+            {
+              "field": "cpu.totalUsage",
+              "id": "1",
+              "meta": {},
+              "pipelineAgg": "select metric",
+              "settings": {},
+              "type": "max"
+            }
+          ],
+          "query": "type:cpu AND containerName:$containerName",
+          "refId": "A",
+          "timeField": "@timestamp"
+        },
+        {
+          "alias": "Memory {{term beat.name}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "beat.name",
+              "id": "3",
+              "settings": {
+                "order": "asc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 1
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "metrics": [
+            {
+              "field": "memory.usage",
+              "id": "1",
+              "inlineScript": null,
+              "meta": {},
+              "settings": {},
+              "type": "max"
+            }
+          ],
+          "query": "type:memory AND containerName:$containerName",
+          "refId": "B",
+          "timeField": "@timestamp"
+        },
+        {
+          "alias": "Memory limit {{term beat.name}}",
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "beat.name",
+              "id": "3",
+              "settings": {
+                "order": "asc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 1
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "dsType": "elasticsearch",
+          "metrics": [
+            {
+              "field": "memory.limit",
+              "id": "1",
+              "inlineScript": null,
+              "meta": {},
+              "settings": {},
+              "type": "max"
+            }
+          ],
+          "query": "type:memory AND containerName:$containerName",
+          "refId": "C",
+          "timeField": "@timestamp"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU / Memory",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percentunit",
+          "label": "CPU",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "bytes",
+          "label": "Memory",
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ]
     }
   ],
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allFormat": "lucene",
+        "allValue": null,
+        "current": {
+          "text": "couchbase2 + rplan",
+          "value": [
+            "couchbase2",
+            "rplan"
+          ]
+        },
+        "datasource": "es_dockerbeat",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Container Name",
+        "multi": true,
+        "multiFormat": "lucene",
+        "name": "containerName",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\": \"containerName\"}",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
   "time": {
     "from": "now-1h",
     "to": "now+10m"
@@ -606,139 +744,8 @@
       "30d"
     ]
   },
-  "templating": {
-    "list": [
-      {
-        "allFormat": "lucene",
-        "current": {
-          "tags": [],
-          "text": "couchbase2 + rplan",
-          "value": [
-            "couchbase2",
-            "rplan"
-          ]
-        },
-        "datasource": "es_dockerbeat",
-        "includeAll": true,
-        "label": "Container Name",
-        "multi": true,
-        "multiFormat": "lucene",
-        "name": "containerName",
-        "options": [
-          {
-            "text": "All",
-            "value": "(\\\"amazing_shirley\\\" OR \\\"couchbase\\\" OR \\\"couchbase2\\\" OR \\\"dockerbeat\\\" OR \\\"elasticsearch\\\" OR \\\"fluentd\\\" OR \\\"grafana\\\" OR \\\"kibana\\\" OR \\\"kickass_hawking\\\" OR \\\"loadbalancer\\\" OR \\\"rplan\\\" OR \\\"rplan2\\\" OR \\\"website\\\")",
-            "selected": false
-          },
-          {
-            "text": "amazing_shirley",
-            "value": "amazing_shirley",
-            "selected": false
-          },
-          {
-            "text": "couchbase",
-            "value": "couchbase",
-            "selected": false
-          },
-          {
-            "text": "couchbase2",
-            "value": "couchbase2",
-            "selected": true
-          },
-          {
-            "text": "dockerbeat",
-            "value": "dockerbeat",
-            "selected": false
-          },
-          {
-            "text": "elasticsearch",
-            "value": "elasticsearch",
-            "selected": false
-          },
-          {
-            "text": "fervent_yonath",
-            "value": "fervent_yonath",
-            "selected": false
-          },
-          {
-            "text": "fluentd",
-            "value": "fluentd",
-            "selected": false
-          },
-          {
-            "text": "grafana",
-            "value": "grafana",
-            "selected": false
-          },
-          {
-            "text": "kibana",
-            "value": "kibana",
-            "selected": false
-          },
-          {
-            "text": "kickass_hawking",
-            "value": "kickass_hawking",
-            "selected": false
-          },
-          {
-            "text": "loadbalancer",
-            "value": "loadbalancer",
-            "selected": false
-          },
-          {
-            "text": "rplan",
-            "value": "rplan",
-            "selected": true
-          },
-          {
-            "text": "rplan2",
-            "value": "rplan2",
-            "selected": false
-          },
-          {
-            "text": "website",
-            "value": "website",
-            "selected": false
-          }
-        ],
-        "query": "{\"find\": \"terms\", \"field\": \"containerName\"}",
-        "refresh": true,
-        "type": "query",
-        "useTags": false
-      }
-    ]
-  },
-  "annotations": {
-    "list": [
-      {
-        "datasource": "es_logs",
-        "enable": true,
-        "iconColor": "rgb(72, 72, 255)",
-        "iconSize": 13,
-        "lineColor": "rgba(96, 109, 255, 0.59)",
-        "name": "Deployments",
-        "query": "\"Server with process pid\"",
-        "showLine": true,
-        "textField": "extra.msg",
-        "timeField": "@timestamp",
-        "titleField": "@container_id"
-      },
-      {
-        "datasource": "es_logs",
-        "enable": true,
-        "iconColor": "rgb(10, 250, 0)",
-        "iconSize": 13,
-        "lineColor": "rgba(109, 255, 96, 0.59)",
-        "name": "Planning Object Changes",
-        "query": "extra.operation:po*",
-        "showLine": true,
-        "textField": "extra.user.id",
-        "timeField": "@timestamp",
-        "titleField": "extra.operation"
-      }
-    ]
-  },
-  "schemaVersion": 8,
-  "version": 1,
-  "links": []
+  "timezone": "browser",
+  "title": "Request Resource Usage",
+  "uid": "GHjk5Zgmz",
+  "version": 1
 }

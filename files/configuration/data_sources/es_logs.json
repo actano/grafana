@@ -1,12 +1,22 @@
 {
+    "id": 2,
+    "orgId": 1,
     "name": "es_logs",
     "type": "elasticsearch",
-    "url": "http://elasticsearch:9200/",
+    "typeLogoUrl": "public/app/plugins/datasource/elasticsearch/img/elasticsearch.svg",
     "access": "proxy",
+    "url": "http://elasticsearch:9200/",
+    "password": "",
+    "user": "",
+    "database": "[logstash-]YYYY.MM.DD",
+    "basicAuth": false,
+    "isDefault": false,
     "jsonData": {
-        "timeField": "@timestamp",
+        "esVersion": 56,
         "interval": "Daily",
-        "esVersion": 2
+        "keepCookies": [],
+        "maxConcurrentShardRequests": 256,
+        "timeField": "@timestamp"
     },
-    "database": "[logstash-]YYYY.MM.DD"
+    "readOnly": false
 }

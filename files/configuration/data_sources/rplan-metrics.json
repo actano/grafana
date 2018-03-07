@@ -1,14 +1,14 @@
 {
-    "id": 1,
+    "id": 3,
     "orgId": 1,
-    "name": "es_dockerbeat",
+    "name": "rplan-metrics",
     "type": "elasticsearch",
     "typeLogoUrl": "public/app/plugins/datasource/elasticsearch/img/elasticsearch.svg",
     "access": "proxy",
     "url": "http://elasticsearch:9200/",
     "password": "",
     "user": "",
-    "database": "[dockerbeat-]YYYY.MM.DD",
+    "database": "[rplan-metrics-]YYYY.MM.DD",
     "basicAuth": false,
     "isDefault": false,
     "jsonData": {
