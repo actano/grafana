@@ -7,7 +7,7 @@ datasources:
     database: '[dockerbeat-]YYYY.MM.DD'
     basic_auth: false
     is_default: false
-    json_data:
+    jsonData:
       esVersion: 56
       interval: Daily
       timeField: '@timestamp'
@@ -19,7 +19,7 @@ datasources:
     database: '[logstash-]YYYY.MM.DD'
     basic_auth: false
     is_default: false
-    json_data:
+    jsonData:
       esVersion: 56
       interval: Daily
       timeField: '@timestamp'
@@ -31,7 +31,7 @@ datasources:
     database: '[rplan-metrics-]YYYY.MM.DD'
     basic_auth: false
     is_default: false
-    json_data:
+    jsonData:
       esVersion: 56
       interval: Daily
       timeField: '@timestamp'
