@@ -5,8 +5,8 @@ datasources:
     access: proxy
     url: http://elasticsearch:9200/
     database: '[dockerbeat-]YYYY.MM.DD'
-    basic_auth: false
-    is_default: false
+    basicAuth: false
+    isDefault: false
     jsonData:
       esVersion: 56
       interval: Daily
@@ -17,8 +17,8 @@ datasources:
     access: proxy
     url: http://elasticsearch:9200/
     database: '[logstash-]YYYY.MM.DD'
-    basic_auth: false
-    is_default: false
+    basicAuth: false
+    isDefault: false
     jsonData:
       esVersion: 56
       interval: Daily
@@ -29,8 +29,8 @@ datasources:
     access: proxy
     url: http://elasticsearch:9200/
     database: '[rplan-metrics-]YYYY.MM.DD'
-    basic_auth: false
-    is_default: false
+    basicAuth: false
+    isDefault: false
     jsonData:
       esVersion: 56
       interval: Daily
