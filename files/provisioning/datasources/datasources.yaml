@@ -1,0 +1,38 @@
+apiVersion: 1
+datasources:
+  - name: es_dockerbeat
+    type: elasticsearch
+    access: proxy
+    url: http://elasticsearch:9200/
+    database: '[dockerbeat-]YYYY.MM.DD'
+    basic_auth: false
+    is_default: false
+    json_data:
+      esVersion: 56
+      interval: Daily
+      timeField: '@timestamp'
+    editable: true
+  - name: es_logs
+    type: elasticsearch
+    access: proxy
+    url: http://elasticsearch:9200/
+    database: '[logstash-]YYYY.MM.DD'
+    basic_auth: false
+    is_default: false
+    json_data:
+      esVersion: 56
+      interval: Daily
+      timeField: '@timestamp'
+    editable: true
+  - name: rplan-metrics
+    type: elasticsearch
+    access: proxy
+    url: http://elasticsearch:9200/
+    database: '[rplan-metrics-]YYYY.MM.DD'
+    basic_auth: false
+    is_default: false
+    json_data:
+      esVersion: 56
+      interval: Daily
+      timeField: '@timestamp'
+    editable: true
